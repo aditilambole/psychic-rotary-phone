@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main()
+{
+   int n,arr[n],i,num=0,j,k,temp;
+   
+   printf("Enter length\n");
+   scanf("%d",&n);
+   printf("Enter Elements-\n");
+   
+   for(k=0;k<n;k++)
+   {
+       //printf("arr[%d] = ",k);
+       scanf("%d",&arr[k]);
+   }
+   
+   
+   //logic
+   for(i=0;i<n;i++)
+   {
+      num=(i+2)%2;
+      
+      if(num==0)
+        {
+          for(j=(i+1);j<n;j++)
+          {
+              if(arr[i]<arr[j])
+              {
+                  temp=arr[i];
+                  arr[i]=arr[j];
+                  arr[j]=temp;
+              }
+             
+          }
+        }
+      
+      
+      else
+        {
+          for(j=(i+1);j<n;j++)
+            {
+             if(arr[i]>arr[j])
+              {
+                  temp=arr[i];
+                  arr[i]=arr[j];
+                  arr[j]=temp;
+              }
+            }
+        }
+   }
+
+//Result --------
+   printf("Resulting array is ::");
+   for(i=0;i<n;i++)
+   {
+       printf("%d ",arr[i]);
+   }
+   
+}   
